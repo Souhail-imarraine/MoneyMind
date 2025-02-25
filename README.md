@@ -7,60 +7,78 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+MoneyMind - Gestion Budgétaire Intelligente
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+MoneyMind est une application qui simplifie la gestion budgétaire personnelle en permettant aux utilisateurs de suivre leurs revenus, dépenses, objectifs d’épargne et souhaits, tout en recevant des suggestions intelligentes via une IA.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+🛠️ Fonctionnalités Principales
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+🏠 Front Office
 
-## Learning Laravel
+🌐 Visiteur
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Consulter une page d’accueil publique avec une présentation de l’application.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Inscription avec saisie du salaire mensuel et date de crédit.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Système de récupération de mot de passe.
 
-## Laravel Sponsors
+👤 Utilisateur Authentifié
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Gérer son salaire mensuel et date de crédit automatique.
 
-### Premium Partners
+Ajouter et gérer ses dépenses avec catégories personnalisées.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Configurer des dépenses récurrentes (loyer, abonnements, etc.).
 
-## Contributing
+Définir des alertes budgétaires pour surveiller les dépenses.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Consulter un tableau de bord avec :
 
-## Code of Conduct
+Revenu restant et total dépensé.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Progression des objectifs d’épargne.
 
-## Security Vulnerabilities
+Derniers conseils d’IA.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Recevoir des notifications par email.
 
-## License
+📊 Back Office (Administrateur)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Accéder à un tableau de bord avec statistiques globales.
+
+Supprimer des comptes inactifs.
+
+Ajouter, modifier ou supprimer des catégories de dépenses.
+
+⚙️ Fonctionnalités Transversales
+
+Système d’authentification et d’autorisation par rôles.
+
+Gestion automatique des salaires et dépenses récurrentes.
+
+Suggestions intelligentes via l’API Gemini.
+
+Statistiques et filtrage des dépenses.
+
+💡 Exigences Techniques
+
+Architecture : Application monolithique scalable avec Laravel.
+
+Automatisation : Gestion des salaires et dépenses via CRON jobs.
+
+IA : Intégration de l’API Gemini pour suggestions personnalisées.
+
+Déploiement : Serveur Linux (AWS, Azure, DigitalOcean).
+
+Interface : Responsive et intuitive, avec visualisation des données (graphiques, tableaux).
+
+⚡ Sécurité
+
+Validation des entrées côté serveur.
+
+Protection contre XSS et CSRF.
+
+Hachage des mots de passe (bcrypt).
+
+Contrôle d’accès basé sur les rôles.
