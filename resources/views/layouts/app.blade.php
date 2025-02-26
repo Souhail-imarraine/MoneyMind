@@ -1,36 +1,57 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceFlow | @yield('title')</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    brand: {
+                        primary: '#E11D48',    // Rose
+                        secondary: '#3B82F6',   // Blue
+                        dark: '#1E293B',       // Slate Dark
+                        light: '#F8FAFC',      // Light
+                        accent: '#F43F5E'      // Lighter Rose
+                    }
+                }
+            }
+        }
+    }
+    </script>
+</head>
+<body class="bg-gray-50">
+    @include('components.navigation.mobile')
+    @include('components.navigation.sidebar')
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+    <main class="md:pl-72">
+        @yield('content')
+    </main>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    @stack('modals')
+    @stack('scripts')
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+    <script>
+        function openAddTransactionModal() {
+            document.getElementById('addTransactionModal').classList.remove('hidden');
+        }
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+        function closeAddTransactionModal() {
+            document.getElementById('addTransactionModal').classList.add('hidden');
+        }
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('addTransactionModal');
+            if (event.target === modal) {
+                closeAddTransactionModal();
+            }
+        });
+    </script>
+</body>
 </html>
