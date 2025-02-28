@@ -52,6 +52,16 @@
                 closeAddTransactionModal();
             }
         });
+
+        document.getElementById('editSalaryButton').addEventListener('click', function() {
+            document.getElementById('editSalaryModal').classList.remove('hidden');
+            document.getElementById('modalBackground').classList.remove('hidden');
+        });
+
+        document.getElementById('closeModalButton').addEventListener('click', function() {
+            document.getElementById('editSalaryModal').classList.add('hidden');
+            document.getElementById('modalBackground').classList.add('hidden');
+        });
     </script>
 </body>
 </html>

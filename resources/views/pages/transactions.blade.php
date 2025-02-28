@@ -11,14 +11,16 @@
                 <h2 class="text-2xl font-bold text-brand-dark">Transactions</h2>
                 <p class="text-gray-600 mt-1">Gérez et suivez vos transactions</p>
             </div>
-            
+
             <!-- Header Actions -->
             <div class="flex items-center space-x-3">
-                <button class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 hover:text-brand-primary hover:bg-gray-50 rounded-lg transition-colors">
+                <button
+                    class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 hover:text-brand-primary hover:bg-gray-50 rounded-lg transition-colors">
                     <i class="fas fa-filter mr-2"></i>
                     Filtres
                 </button>
-                <button class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 hover:text-brand-primary hover:bg-gray-50 rounded-lg transition-colors">
+                <button
+                    class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 hover:text-brand-primary hover:bg-gray-50 rounded-lg transition-colors">
                     <i class="fas fa-download mr-2"></i>
                     Exporter
                 </button>
@@ -83,6 +85,14 @@
             </div>
         </div>
     </div>
+    <div class="flex flex-col sm:flex-row justify-between items-center mb-6 space-y-4 sm:space-y-0">
+        <h2 class="text-xl font-semibold text-brand-dark">Transactions</h2>
+        <button onclick="openAddTransactionModal()"
+            class="w-full sm:w-auto bg-brand-primary text-white px-4 py-2.5 rounded-lg hover:bg-brand-primary/90 transition-colors flex items-center justify-center space-x-2">
+            <i class="fas fa-plus"></i>
+            <span>Nouvelle Transaction</span>
+        </button>
+    </div>
 
     <!-- Transactions Table Section -->
     <div class="bg-white rounded-xl shadow-sm">
@@ -91,21 +101,21 @@
             <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
                 <!-- Search -->
                 <div class="relative w-full md:w-64">
-                    <input type="text" 
-                        placeholder="Rechercher une transaction..." 
-                        class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary text-sm"
-                    >
+                    <input type="text" placeholder="Rechercher une transaction..."
+                        class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary text-sm">
                     <i class="fas fa-search absolute left-3 top-2.5 text-gray-400"></i>
                 </div>
 
                 <!-- Filters -->
                 <div class="flex items-center space-x-4">
-                    <select class="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary">
+                    <select
+                        class="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary">
                         <option>Tous les types</option>
                         <option>Dépenses</option>
                         <option>Revenus</option>
                     </select>
-                    <select class="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary">
+                    <select
+                        class="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary">
                         <option>Ce mois</option>
                         <option>3 derniers mois</option>
                         <option>Cette année</option>
@@ -119,12 +129,18 @@
             <table class="w-full">
                 <thead>
                     <tr class="bg-gray-50">
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Catégorie</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Montant</th>
-                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Description</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Catégorie</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Montant</th>
+                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Actions</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200">
@@ -137,7 +153,8 @@
                             Courses Supermarché
                         </td>
                         <td class="px-6 py-4 text-sm text-gray-600">
-                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                                 Alimentation
                             </span>
                         </td>
@@ -181,5 +198,96 @@
             </div>
         </div>
     </div>
+
+    <!-- New Transaction Modal -->
+    <div id="addTransactionModal" 
+         class="hidden fixed inset-0 z-50 overflow-y-auto"
+         aria-labelledby="transaction-modal"
+         role="dialog"
+         aria-modal="true">
+        
+        <!-- Background overlay -->
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+        <!-- Modal position -->
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4">
+                <!-- Modal panel -->
+                <div class="relative transform overflow-hidden rounded-xl bg-white shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                    <div class="px-6 py-4 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-semibold text-brand-dark">Nouvelle Transaction</h3>
+                            <button onclick="closeAddTransactionModal()" class="text-gray-400 hover:text-gray-600">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <form class="p-6">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Type</label>
+                                <select class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-primary/20">
+                                    <option>Dépense</option>
+                                    <option>Revenu</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Montant (DH)</label>
+                                <input type="number" class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-primary/20">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Catégorie</label>
+                                <select class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-primary/20">
+                                    <option>Alimentation</option>
+                                    <option>Transport</option>
+                                    <option>Factures</option>
+                                    <option>Loisirs</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Date</label>
+                                <input type="date" class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-primary/20">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Note</label>
+                                <textarea class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-primary/20" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex items-center justify-end space-x-3">
+                            <button type="button" onclick="closeAddTransactionModal()" 
+                                class="px-4 py-2 text-gray-600 hover:text-gray-800">
+                                Annuler
+                            </button>
+                            <button type="submit" 
+                                class="px-4 py-2 bg-brand-primary text-white rounded-lg hover:bg-brand-primary/90">
+                                Ajouter la transaction
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-@endsection 
+
+@push('scripts')
+<script>
+function openAddTransactionModal() {
+    document.getElementById('addTransactionModal').classList.remove('hidden');
+}
+
+function closeAddTransactionModal() {
+    document.getElementById('addTransactionModal').classList.add('hidden');
+}
+
+// Close modal when clicking outside
+document.getElementById('addTransactionModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeAddTransactionModal();
+    }
+});
+</script>
+@endpush
+@endsection

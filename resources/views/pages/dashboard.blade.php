@@ -3,15 +3,15 @@
 @section('title', 'Dashboard')
 
 @section('content')
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6">
-        @include('components.dashboard.header')
-        @include('components.dashboard.stats')
-        @include('components.dashboard.charts')
-        
-    </div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6">
+    @include('components.dashboard.header')
+    @include('components.dashboard.stats')
+    @include('components.dashboard.charts')
+
+</div>
 @endsection
 
-@push('scripts')    
+@push('scripts')
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Spending Trends Chart
@@ -69,10 +69,10 @@ document.addEventListener('DOMContentLoaded', function() {
             datasets: [{
                 data: [1250, 850, 1100, 600],
                 backgroundColor: [
-                    '#2563eb',  // brand-primary
-                    '#16a34a',  // brand-secondary
-                    '#8b5cf6',  // purple-500
-                    '#f97316'   // orange-500
+                    '#2563eb', // brand-primary
+                    '#16a34a', // brand-secondary
+                    '#8b5cf6', // purple-500
+                    '#f97316' // orange-500
                 ],
                 borderWidth: 0,
                 cutout: '75%'
@@ -104,16 +104,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function openAddTransactionModal() {
-    document.getElementById('addTransactionModal').classList.remove('hidden');
-}
+document.getElementById('editSalaryButton').addEventListener('click', function() {
+    document.getElementById('editSalaryModal').classList.remove('hidden');
+    document.getElementById('modalBackground').classList.remove('hidden');
+});
 
-function closeAddTransactionModal() {
-    document.getElementById('addTransactionModal').classList.add('hidden');
-}
+document.getElementById('closeModalButton').addEventListener('click', function() {
+    document.getElementById('editSalaryModal').classList.add('hidden');
+    document.getElementById('modalBackground').classList.add('hidden');
+});
+
 </script>
 @endpush
 
 @push('modals')
-    @include('components.modals.add-transaction')
+@include('components.modals.add-transaction');
+@include('components.modals.update-salary');
 @endpush

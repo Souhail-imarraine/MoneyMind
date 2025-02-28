@@ -7,14 +7,14 @@
             </h1>
         </div>
 
-        <div class="px-4 mb-6">
+        <!-- <div class="px-4 mb-6">
             <button
                 onclick="openAddTransactionModal()"
                 class="w-full bg-brand-primary text-white px-4 py-3 rounded-xl hover:bg-brand-primary/90 transition-colors flex items-center justify-center space-x-2">
                 <i class="fas fa-plus"></i>
                 <span class="font-medium">Nouvelle Transaction</span>
             </button>
-        </div>
+        </div> -->
 
         <nav class="flex-1 px-4 space-y-1">
             <a href="{{ route('dashboard') }}" class="flex items-center px-4 py-3 text-brand-primary bg-brand-primary/10 rounded-xl">
@@ -30,15 +30,22 @@
                 <span>Notifications</span>
                 <span class="ml-auto bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">3</span>
             </a>
-            <a href="#" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl">
-                <i class="fas fa-chart-line w-6"></i>
-                <span>Analyses</span>
-            </a>
             <a href="{{ route('goals') }}" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl">
                 <i class="fas fa-bullseye w-6"></i>
                 <span>Objectifs</span>
             </a>
         </nav>
+
+        <!-- Logout Section -->
+        <div class="px-4 mt-6">
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl w-full">
+                    <i class="fas fa-sign-out-alt w-6"></i>
+                    <span>Déconnexion</span>
+                </button>
+            </form>
+        </div>
 
         <div class="p-4 mt-6">
             <div class="bg-brand-primary/5 p-4 rounded-xl">

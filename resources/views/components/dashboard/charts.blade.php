@@ -7,7 +7,8 @@
                             Tendances des Dépenses
                         </h3>
                         <div class="flex items-center space-x-4">
-                            <select class="bg-gray-50 border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-brand-primary/20">
+                            <select
+                                class="bg-gray-50 border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-brand-primary/20">
                                 <option>Cette semaine</option>
                                 <option>Ce mois</option>
                                 <option>Cette année</option>
@@ -26,7 +27,8 @@
                         <h3 class="text-lg font-semibold text-brand-dark">
                             Dépenses par Catégorie
                         </h3>
-                        <select class="bg-gray-50 border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-brand-primary/20">
+                        <select
+                            class="bg-gray-50 border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-brand-primary/20">
                             <option>Ce mois</option>
                             <option>3 derniers mois</option>
                             <option>Cette année</option>
@@ -63,6 +65,25 @@
                             <span class="text-xs text-gray-600">Loisirs</span>
                             <span class="ml-auto text-xs font-medium text-brand-dark">600 DH</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Salary Section -->
+            <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-semibold text-brand-dark">
+                        Salaire
+                    </h3>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-2xl font-bold text-brand-dark">{{ Auth::user()->salary }} DH</span>
+                        <button id="editSalaryButton" class="text-brand-primary hover:text-brand-dark">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 4h2a2 2 0 012 2v2m-4-4l-8 8m0 0l-4 4m4-4h4m-4 0v4m8-8l4-4m0 0l-4 4m0 0l-4 4" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
