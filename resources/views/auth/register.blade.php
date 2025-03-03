@@ -85,14 +85,13 @@
                         @enderror
                     </div>
 
-                    <!-- Date de salaire -->
+                    <!-- Day of Salary -->
                     <div class="relative">
-                        <i
-                            class="fas fa-calendar absolute left-3 top-1/2 transform -translate-y-1/2 text-[#3B82F6]"></i>
-                        <input type="date" name="salary_date" id="salary_date" required
+                        <i class="fas fa-calendar-day absolute left-3 top-1/2 transform -translate-y-1/2 text-[#3B82F6]"></i>
+                        <input type="text" name="salary_day" id="salary_day" required
                             class="w-full bg-white/10 text-[#F8FAFC] rounded-lg pl-10 pr-4 py-3 border-2 border-transparent focus:border-[#F43F5E] focus:outline-none transition-colors"
-                            value="{{ old('salary_date') }}">
-                        @error('salary_date')
+                            placeholder="Jour du salaire (Ex: 15)">
+                        @error('salary_day')
                         <p class="mt-1 text-[#F43F5E] text-sm">{{ $message }}</p>
                         @enderror
                     </div>

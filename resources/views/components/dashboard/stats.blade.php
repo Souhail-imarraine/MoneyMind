@@ -10,7 +10,7 @@
                 <span class="text-sm font-medium">2.5%</span>
             </div>
         </div>
-        <h3 class="text-gray-500 text-sm font-medium">{{$user->salary}}</h3>
+        <h3 class="text-gray-500 text-sm font-medium">Tatal</h3>
         <div class="mt-2 flex items-baseline">
             <p class="text-2xl font-bold text-brand-dark">{{$user->salary}}</p>
             <span class="ml-1 text-gray-500">DH</span>
@@ -62,7 +62,7 @@
         </div>
         <h3 class="text-gray-500 text-sm font-medium">Revenus du Mois</h3>
         <div class="mt-2 flex items-baseline">
-            <p class="text-2xl font-bold text-brand-dark">8,750</p>
+            <p class="text-2xl font-bold text-brand-dark">{{$user->salary}}</p>
             <span class="ml-1 text-gray-500">DH</span>
         </div>
         <div class="mt-4 flex items-center text-sm text-gray-500">

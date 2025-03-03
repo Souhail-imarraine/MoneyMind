@@ -1,7 +1,7 @@
 <div id="transactionModal" class="fixed inset-0 z-50 hidden">
     <!-- Overlay -->
     <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-    
+
     <!-- Modal -->
     <div class="absolute inset-0 flex items-center justify-center p-4">
         <div class="bg-white dark:bg-[#1a1f37] rounded-xl shadow-xl w-full max-w-2xl">
@@ -51,7 +51,7 @@
                                 Montant
                             </label>
                             <div class="relative">
-                                <input type="number" 
+                                <input type="number"
                                        name="amount"
                                        step="0.01"
                                        required
@@ -65,7 +65,7 @@
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                 Date
                             </label>
-                            <input type="date" 
+                            <input type="date"
                                    name="date"
                                    required
                                    class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-money-primary/20 dark:focus:ring-money-secondary/20">
@@ -77,7 +77,7 @@
                         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                             Catégorie
                         </label>
-                        <select name="category" 
+                        <select name="category"
                                 required
                                 class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-money-primary/20 dark:focus:ring-money-secondary/20">
                             <option value="">Sélectionner une catégorie</option>
@@ -92,7 +92,7 @@
                         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                             Description
                         </label>
-                        <textarea name="description" 
+                        <textarea name="description"
                                   rows="3"
                                   class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-money-primary/20 dark:focus:ring-money-secondary/20"
                                   placeholder="Ajouter une description..."></textarea>
@@ -104,9 +104,9 @@
                             Pièce jointe
                         </label>
                         <div class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl p-6 text-center" id="dropZone">
-                            <input type="file" 
-                                   name="attachment" 
-                                   id="file-upload" 
+                            <input type="file"
+                                   name="attachment"
+                                   id="file-upload"
                                    class="hidden"
                                    accept="image/*,.pdf">
                             <label for="file-upload" class="cursor-pointer">
@@ -127,12 +127,12 @@
 
                 <!-- Modal Footer -->
                 <div class="p-6 border-t border-gray-200 dark:border-gray-700 flex justify-end space-x-4">
-                    <button type="button" 
-                            onclick="closeTransactionModal()" 
+                    <button type="button"
+                            onclick="closeTransactionModal()"
                             class="px-6 py-2.5 rounded-xl border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700/50">
                         Annuler
                     </button>
-                    <button type="submit" 
+                    <button type="submit"
                             class="px-6 py-2.5 rounded-xl bg-money-primary dark:bg-money-secondary text-white hover:bg-money-primary/90 dark:hover:bg-money-secondary/90">
                         Enregistrer
                     </button>

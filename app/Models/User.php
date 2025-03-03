@@ -22,7 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
         'salary',
-        'salary_date',
+        'salary_day',
         'role'
     ];
 
@@ -43,9 +43,7 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
-        'salary' => 'decimal:2',
-        'salary_date' => 'date'
+        'email_verified_at' => 'datetime'
     ];
 
     // public function completed()

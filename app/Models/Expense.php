@@ -10,12 +10,12 @@ class Expense extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
-        'name',
-        'amount',
+        'name', 
+        'amount', 
         'category_id',
-        'date',
+        'date', 
         'is_recurring',
+        'user_id'
     ];
 
     // Define the relationship with the User model

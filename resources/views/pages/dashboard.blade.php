@@ -116,8 +116,6 @@ document.getElementById('closeModalButton').addEventListener('click', function()
 
 </script>
 @endpush
-
 @push('modals')
-@include('components.modals.add-transaction');
 @include('components.modals.update-salary');
 @endpush

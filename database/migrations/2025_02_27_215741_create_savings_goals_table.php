@@ -9,12 +9,12 @@ class CreateSavingsGoalsTable extends Migration
     public function up()
     {
         Schema::create('savings_goals', function (Blueprint $table) {
-            $table->id(); // INT (PK)
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // INT (FK)
-            $table->float('goal_amount'); // FLOAT
-            $table->float('current_amount')->default(0); // FLOAT
-            $table->date('target_date'); // DATE
-            $table->timestamps(); // created_at, updated_at
+            $table->id(); 
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->float('goal_amount'); 
+            $table->float('current_amount')->default(0); 
+            $table->date('target_date'); 
+            $table->timestamps(); 
         });
     }
 

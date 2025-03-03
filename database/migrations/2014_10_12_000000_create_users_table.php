@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->decimal('salary', 10, 2)->default(0.00);
-            $table->date('salary_date')->default(DB::raw('CURRENT_DATE'));
+            $table->integer('salary_day')->default(1);
             $table->enum('role', ['user', 'admin'])->default('user');
             $table->rememberToken();
             $table->timestamps();

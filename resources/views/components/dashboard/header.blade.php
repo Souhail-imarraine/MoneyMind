@@ -93,10 +93,9 @@
                     <!-- Insights Carousel -->
                     <div class="relative">
                         <div class="overflow-hidden">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex flex-wrap items-start justify-between space-x-4">
                                 <!-- Insight Card 1 -->
-                                <div
-                                    class="flex-shrink-0 w-full max-w-md bg-white rounded-xl border border-gray-100 p-4">
+                                <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 bg-white rounded-xl border border-gray-100 p-4 mb-4 transition-transform transform hover:scale-105">
                                     <div class="flex items-start space-x-3">
                                         <div class="flex-shrink-0">
                                             <i class="fas fa-chart-line text-yellow-500"></i>
@@ -122,8 +121,7 @@
                                 </div>
 
                                 <!-- Insight Card 2 -->
-                                <div
-                                    class="flex-shrink-0 w-full max-w-md bg-white rounded-xl border border-gray-100 p-4">
+                                <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 bg-white rounded-xl border border-gray-100 p-4 mb-4 transition-transform transform hover:scale-105">
                                     <div class="flex items-start space-x-3">
                                         <div class="flex-shrink-0">
                                             <i class="fas fa-piggy-bank text-green-500"></i>

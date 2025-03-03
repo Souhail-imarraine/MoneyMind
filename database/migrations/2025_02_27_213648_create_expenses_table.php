@@ -9,14 +9,14 @@ class CreateExpensesTable extends Migration
     public function up()
     {
         Schema::create('expenses', function (Blueprint $table) {
-            $table->id(); // INT (PK)
+            $table->id(); 
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // INT (FK)
-            $table->string('name'); // VARCHAR(255)
-            $table->float('amount'); // FLOAT
+            $table->string('name'); 
+            $table->float('amount'); 
             $table->foreignId('category_id')->constrained()->onDelete('cascade'); // INT (FK)
-            $table->date('date'); // DATE
-            $table->boolean('is_recurring')->default(false); // BOOLEAN
-            $table->timestamps(); // created_at, updated_at
+            $table->date('date'); 
+            $table->boolean('is_recurring')->default(false); 
+            $table->timestamps(); 
         });
     }
 
