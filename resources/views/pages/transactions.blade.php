@@ -10,6 +10,12 @@
         {{ session('success') }}
     </div>
     @endif
+    @if(session('error'))
+    <div class="bg-red-500 text-white p-4 rounded-lg mb-4">
+        {{ session('error') }}
+    </div>
+    @endif
+
 
     <!-- Page Header -->
     <div class="mb-8">
@@ -43,7 +49,7 @@
     </div>
 
     <!-- Transaction Stats -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <!-- Total Transactions -->
         <div class="bg-white rounded-xl shadow-sm p-6">
             <div class="flex items-center justify-between mb-4">
@@ -53,10 +59,9 @@
                 <span class="text-brand-primary text-sm font-medium">Ce mois</span>
             </div>
             <h3 class="text-gray-500 text-sm font-medium">Total Transactions</h3>
-            <p class="text-2xl font-bold text-brand-dark mt-2">127</p>
+            <p class="text-2xl font-bold text-brand-dark mt-2">{{$totalTransaction}}</p>
             <div class="mt-4 flex items-center text-sm text-brand-secondary">
                 <i class="fas fa-arrow-up mr-1 text-xs"></i>
-                <span>+12.5% vs mois dernier</span>
             </div>
         </div>
 
@@ -69,26 +74,9 @@
                 <span class="text-brand-primary text-sm font-medium">Ce mois</span>
             </div>
             <h3 class="text-gray-500 text-sm font-medium">Total Dépenses</h3>
-            <p class="text-2xl font-bold text-brand-dark mt-2">4,890 DH</p>
+            <p class="text-2xl font-bold text-brand-dark mt-2">{{$totalDépenses}} DH</p>
             <div class="mt-4 flex items-center text-sm text-red-500">
                 <i class="fas fa-arrow-up mr-1 text-xs"></i>
-                <span>+8.2% vs mois dernier</span>
-            </div>
-        </div>
-
-        <!-- Total Revenus -->
-        <div class="bg-white rounded-xl shadow-sm p-6">
-            <div class="flex items-center justify-between mb-4">
-                <div class="bg-green-500/10 p-3 rounded-xl">
-                    <i class="fas fa-arrow-down text-green-500 text-xl"></i>
-                </div>
-                <span class="text-brand-primary text-sm font-medium">Ce mois</span>
-            </div>
-            <h3 class="text-gray-500 text-sm font-medium">Total Revenus</h3>
-            <p class="text-2xl font-bold text-brand-dark mt-2">8,750 DH</p>
-            <div class="mt-4 flex items-center text-sm text-green-500">
-                <i class="fas fa-arrow-up mr-1 text-xs"></i>
-                <span>+15.3% vs mois dernier</span>
             </div>
         </div>
     </div>
@@ -119,7 +107,6 @@
                         class="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary">
                         <option>Tous les types</option>
                         <option>Dépenses</option>
-                        <option>Revenus</option>
                     </select>
                     <select
                         class="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary">
@@ -172,13 +159,19 @@
                             {{ $expense->is_recurring ? 'Oui' : 'Non' }}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
-                            <button class="text-gray-400 hover:text-brand-primary mx-1" onclick="openEditModal({{ $expense->id }})">
-                            <i class="fas fa-edit"></i>
+                            <button
+                                class="bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg px-2 py-1 mx-1"
+                                onclick="openEditModal({{ $expense->id }})">
+                                <i class="fas fa-edit"></i>
                             </button>
-                            <form action="{{ route('transactions.destroy', $expense->id) }}" method="POST">
+                            <form class="inline-block" action="{{ route('transactions.destroy', $expense->id) }}"
+                                method="POST"
+                                onsubmit="return confirm('Voulez-vous vraiment supprimer cette transaction?')">
                                 @csrf
                                 @method('DELETE')
-                                <button class="text-gray-400 hover:text-red-600 mx-1" type="submit">
+                                <button
+                                    class="bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300 rounded-lg px-2 py-1 mx-1"
+                                    type="submit">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </form>
@@ -193,15 +186,19 @@
         <div class="px-6 py-4 border-t border-gray-200">
             <div class="flex items-center justify-between">
                 <p class="text-sm text-gray-600">
-                    Affichage de 1 à 10 sur 127 transactions
+                    Affichage de {{ $expenses->firstItem() }} à {{ $expenses->lastItem() }} sur {{ $expenses->total() }}
+                    transactions
                 </p>
                 <div class="flex items-center space-x-2">
-                    <button class="px-3 py-1 border rounded-lg text-sm text-gray-600 hover:bg-gray-50">
-                        Précédent
-                    </button>
-                    <button class="px-3 py-1 border rounded-lg text-sm text-gray-600 hover:bg-gray-50">
-                        Suivant
-                    </button>
+                    <div class="flex items-center">
+                        <a href="{{ $expenses->previousPageUrl() }}" class="px-4 py-2 text-sm text-gray-600 hover:bg-gray-200 rounded-lg" @if(!$expenses->onFirstPage()) @endif>
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                        {{ $expenses->links() }} <!-- Default pagination links -->
+                        <a href="{{ $expenses->nextPageUrl() }}" class="px-4 py-2 text-sm text-gray-600 hover:bg-gray-200 rounded-lg" @if(!$expenses->hasMorePages()) disabled @endif>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

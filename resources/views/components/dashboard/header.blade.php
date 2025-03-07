@@ -15,7 +15,7 @@
                 <div class="flex items-center space-x-4">
                     <!-- Notifications -->
                     <div class="relative">
-                        <button onclick="toggleNotificationModal()" 
+                        <button onclick="toggleNotificationModal()"
                                 class="p-2 text-gray-600 hover:text-brand-primary rounded-lg transition-colors">
                             <i class="fas fa-bell"></i>
                             <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
@@ -67,92 +67,69 @@
         </div>
     </div>
 
-    <!-- IA Insights Alert Section -->
-    <div class="border-b border-gray-200 bg-gradient-to-r from-brand-primary/5 to-transparent">
+    <!-- IA Insights Section -->
+    <div class="border-b border-gray-200 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4">
-            <div class="flex items-start space-x-6">
+            <div class="flex items-start space-x-4">
                 <!-- AI Icon -->
-                <div class="flex-shrink-0 w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
-                    <i class="fas fa-robot text-brand-primary text-xl"></i>
+                <div class="flex-shrink-0 w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-robot text-gray-600"></i>
                 </div>
 
                 <!-- Insights Content -->
                 <div class="flex-1">
-                    <div class="flex items-center justify-between mb-2">
-                        <h3 class="text-lg font-semibold text-brand-dark flex items-center">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-lg font-medium text-gray-900">
                             Insights IA
-                            <span class="ml-2 text-xs bg-brand-primary/10 text-brand-primary px-2 py-0.5 rounded-full">
-                                Nouveau
-                            </span>
                         </h3>
                         <button class="text-gray-400 hover:text-gray-600">
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
 
-                    <!-- Insights Carousel -->
-                    <div class="relative">
-                        <div class="overflow-hidden">
-                            <div class="flex flex-wrap items-start justify-between space-x-4">
-                                <!-- Insight Card 1 -->
-                                <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 bg-white rounded-xl border border-gray-100 p-4 mb-4 transition-transform transform hover:scale-105">
-                                    <div class="flex items-start space-x-3">
-                                        <div class="flex-shrink-0">
-                                            <i class="fas fa-chart-line text-yellow-500"></i>
-                                        </div>
-                                        <div>
-                                            <p class="text-sm text-gray-600">
-                                                <span class="font-medium text-brand-dark">Dépenses inhabituelles
-                                                    détectées :</span>
-                                                Vos dépenses en restauration ont augmenté de 45% ce mois-ci par rapport
-                                                à votre moyenne habituelle.
-                                            </p>
-                                            <div class="mt-2 flex items-center space-x-3">
-                                                <button
-                                                    class="text-xs text-brand-primary font-medium hover:text-brand-primary/80">
-                                                    Voir l'analyse complète
-                                                </button>
-                                                <button class="text-xs text-gray-500 hover:text-gray-700">
-                                                    Ignorer
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Insight Card 2 -->
-                                <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 bg-white rounded-xl border border-gray-100 p-4 mb-4 transition-transform transform hover:scale-105">
-                                    <div class="flex items-start space-x-3">
-                                        <div class="flex-shrink-0">
-                                            <i class="fas fa-piggy-bank text-green-500"></i>
-                                        </div>
-                                        <div>
-                                            <p class="text-sm text-gray-600">
-                                                <span class="font-medium text-brand-dark">Opportunité d'épargne :</span>
-                                                Basé sur vos habitudes, vous pourriez économiser 200 DH supplémentaires
-                                                ce mois-ci.
-                                            </p>
-                                            <div class="mt-2 flex items-center space-x-3">
-                                                <button
-                                                    class="text-xs text-brand-primary font-medium hover:text-brand-primary/80">
-                                                    Voir les suggestions
-                                                </button>
-                                                <button class="text-xs text-gray-500 hover:text-gray-700">
-                                                    Plus tard
-                                                </button>
-                                            </div>
-                                        </div>
+                    <!-- Insights List -->
+                    <div class="space-y-4">
+                        <!-- Insight 1 -->
+                        <div class="bg-white rounded-lg border border-gray-200 p-3">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-chart-line text-gray-400 mt-1"></i>
+                                <div>
+                                    <p class="text-sm text-gray-600">
+                                        <span class="font-medium text-gray-900">Dépenses inhabituelles :</span>
+                                        Vos dépenses en restauration ont augmenté de 45% ce mois-ci.
+                                    </p>
+                                    <div class="mt-2">
+                                        <button class="text-sm text-blue-600 hover:text-blue-800">
+                                            Voir détails
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Navigation Dots -->
-                        <div class="flex items-center justify-center mt-4 space-x-2">
-                            <button class="w-2 h-2 rounded-full bg-brand-primary"></button>
-                            <button class="w-2 h-2 rounded-full bg-gray-300"></button>
-                            <button class="w-2 h-2 rounded-full bg-gray-300"></button>
+                        <!-- Insight 2 -->
+                        <div class="bg-white rounded-lg border border-gray-200 p-3">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-piggy-bank text-gray-400 mt-1"></i>
+                                <div>
+                                    <p class="text-sm text-gray-600">
+                                        <span class="font-medium text-gray-900">Conseil d'épargne :</span>
+                                        Potentiel d'économie de 200 DH ce mois-ci.
+                                    </p>
+                                    <div class="mt-2">
+                                        <button class="text-sm text-blue-600 hover:text-blue-800">
+                                            Voir suggestions
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+
+                    <!-- Simple Pagination -->
+                    <div class="flex justify-center mt-3 space-x-1">
+                        <div class="w-2 h-2 rounded-full bg-gray-800"></div>
+                        <div class="w-2 h-2 rounded-full bg-gray-300"></div>
                     </div>
                 </div>
             </div>
@@ -161,12 +138,12 @@
 </div>
 
 <!-- Notification Modal -->
-<div id="notificationModal" 
+<div id="notificationModal"
      class="hidden fixed inset-0 z-50 overflow-y-auto"
      aria-labelledby="notification-modal"
      role="dialog"
      aria-modal="true">
-    
+
     <!-- Background overlay -->
     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 

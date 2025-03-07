@@ -7,12 +7,12 @@
             </div>
             <div class="flex items-center space-x-1 text-brand-secondary">
                 <i class="fas fa-arrow-up text-sm"></i>
-                <span class="text-sm font-medium">2.5%</span>
+                {{-- <span class="text-sm font-medium">2.5%</span> --}}
             </div>
         </div>
         <h3 class="text-gray-500 text-sm font-medium">Tatal</h3>
         <div class="mt-2 flex items-baseline">
-            <p class="text-2xl font-bold text-brand-dark">{{$user->salary}}</p>
+            <p class="text-2xl font-bold text-brand-dark">{{$balance}}</p>
             <span class="ml-1 text-gray-500">DH</span>
         </div>
         <div class="mt-4 flex items-center text-sm text-gray-500">
@@ -37,13 +37,13 @@
         </div>
         <h3 class="text-gray-500 text-sm font-medium">Dépenses du Mois</h3>
         <div class="mt-2 flex items-baseline">
-            <p class="text-2xl font-bold text-brand-dark">4,890</p>
+            <p class="text-2xl font-bold text-brand-dark">{{$totalDepenses}}</p>
             <span class="ml-1 text-gray-500">DH</span>
         </div>
         <div class="mt-4 flex items-center text-sm text-gray-500">
             <span class="flex items-center text-red-500">
                 <i class="fas fa-arrow-down mr-1 text-xs"></i>
-                -320 DH
+                -{{$totalDepenses}}
             </span>
             <span class="ml-2">vs mois dernier</span>
         </div>

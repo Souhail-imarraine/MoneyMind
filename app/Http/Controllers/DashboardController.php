@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
-
-use Illuminate\Http\Request;
+use App\Models\Expense;
 
 class DashboardController extends Controller
 {
@@ -15,7 +14,9 @@ class DashboardController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('pages.dashboard', compact('user'));
+        $balance = $user->balance;
+        $totalDepenses = Expense::where('user_id', auth()->id())->sum('amount');
+        return view('pages.dashboard', compact('user', 'balance', 'totalDepenses'));
     }
 
     public function editSalary()

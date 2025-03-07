@@ -55,4 +55,10 @@ Route::post('/transactions', [TransactionController::class, 'store'])->name('tra
 
 Route::put('/transactions/{id}', [TransactionController::class, 'update'])->name('transactions.update');
 Route::delete('/transactions/{id}', [TransactionController::class, 'destroy'])->name('transactions.destroy');
+
+
+Route::post('/goals', [GoalController::class, 'store'])->name('goals.store');
+Route::delete('/goals/{id}', [GoalController::class, 'destroy'])->name('goals.destroy');
+Route::post('/goals/{id}/progress', [GoalController::class, 'updateProgress'])->name('goals.progress');
+
 require __DIR__.'/auth.php';

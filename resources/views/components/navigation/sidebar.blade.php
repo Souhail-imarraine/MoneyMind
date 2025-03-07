@@ -22,8 +22,8 @@
                 <span>Tableau de bord</span>
             </a>
             <a href="{{ route('transactions') }}" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl">
-                <i class="fas fa-exchange-alt w-6"></i>
-                <span>Transactions</span>
+                <i class="fas fa-money-bill-wave w-6"></i>
+                <span>Dépenses</span>
             </a>
             <a href="{{ route('notifications') }}" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl">
                 <i class="fas fa-bell w-6"></i>
