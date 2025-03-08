@@ -9,6 +9,8 @@ use App\Http\Controllers\GoalController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AIInsightController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -60,5 +62,8 @@ Route::delete('/transactions/{id}', [TransactionController::class, 'destroy'])->
 Route::post('/goals', [GoalController::class, 'store'])->name('goals.store');
 Route::delete('/goals/{id}', [GoalController::class, 'destroy'])->name('goals.destroy');
 Route::post('/goals/{id}/progress', [GoalController::class, 'updateProgress'])->name('goals.progress');
+
+
+
 
 require __DIR__.'/auth.php';

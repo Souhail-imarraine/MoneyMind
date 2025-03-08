@@ -67,71 +67,39 @@
         </div>
     </div>
 
-    <!-- IA Insights Section -->
-    <div class="border-b border-gray-200 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4">
-            <div class="flex items-start space-x-4">
-                <!-- AI Icon -->
-                <div class="flex-shrink-0 w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center">
-                    <i class="fas fa-robot text-gray-600"></i>
+    <!-- Section Conseil IA -->
+    <div class="bg-white rounded-lg shadow p-4 mb-4">
+        <div class="flex items-center space-x-3">
+            <!-- Icône -->
+            <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <i class="fas fa-robot text-white text-xl"></i>
+            </div>
+
+            <!-- Contenu -->
+            <div class="flex-1">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="text-lg font-semibold text-gray-900">Conseil Financier</h3>
+                    @if($lastUpdate)
+                        <span class="text-xs text-gray-500">
+                            Mis à jour à {{ $lastUpdate }}
+                        </span>
+                    @endif
                 </div>
 
-                <!-- Insights Content -->
-                <div class="flex-1">
-                    <div class="flex items-center justify-between mb-3">
-                        <h3 class="text-lg font-medium text-gray-900">
-                            Insights IA
-                        </h3>
-                        <button class="text-gray-400 hover:text-gray-600">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-
-                    <!-- Insights List -->
-                    <div class="space-y-4">
-                        <!-- Insight 1 -->
-                        <div class="bg-white rounded-lg border border-gray-200 p-3">
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-chart-line text-gray-400 mt-1"></i>
-                                <div>
-                                    <p class="text-sm text-gray-600">
-                                        <span class="font-medium text-gray-900">Dépenses inhabituelles :</span>
-                                        Vos dépenses en restauration ont augmenté de 45% ce mois-ci.
-                                    </p>
-                                    <div class="mt-2">
-                                        <button class="text-sm text-blue-600 hover:text-blue-800">
-                                            Voir détails
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Insight 2 -->
-                        <div class="bg-white rounded-lg border border-gray-200 p-3">
-                            <div class="flex items-start space-x-3">
-                                <i class="fas fa-piggy-bank text-gray-400 mt-1"></i>
-                                <div>
-                                    <p class="text-sm text-gray-600">
-                                        <span class="font-medium text-gray-900">Conseil d'épargne :</span>
-                                        Potentiel d'économie de 200 DH ce mois-ci.
-                                    </p>
-                                    <div class="mt-2">
-                                        <button class="text-sm text-blue-600 hover:text-blue-800">
-                                            Voir suggestions
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Simple Pagination -->
-                    <div class="flex justify-center mt-3 space-x-1">
-                        <div class="w-2 h-2 rounded-full bg-gray-800"></div>
-                        <div class="w-2 h-2 rounded-full bg-gray-300"></div>
-                    </div>
+                <div class="bg-gray-50 rounded p-3">
+                    <p class="text-gray-700">
+                        {{ $aiAdvice }}
+                    </p>
                 </div>
+
+                @if($totalExpenses > 0)
+                    <div class="mt-3 text-sm text-gray-600">
+                        Dépenses du mois:
+                        <span class="font-semibold">
+                            {{ number_format($totalExpenses, 0, ',', ' ') }} DH
+                        </span>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
@@ -258,11 +226,11 @@ function toggleNotificationModal() {
     if (modal.classList.contains('hidden')) {
         // Show modal
         modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        document.body.style.overflow = 'hidden';
     } else {
         // Hide modal
         modal.classList.add('hidden');
-        document.body.style.overflow = 'auto'; // Restore scrolling
+        document.body.style.overflow = 'auto';
     }
 }
 
@@ -272,5 +240,7 @@ document.getElementById('notificationModal').addEventListener('click', function(
         toggleNotificationModal();
     }
 });
+
+
 </script>
 @endpush

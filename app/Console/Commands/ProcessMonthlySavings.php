@@ -17,14 +17,14 @@ class ProcessMonthlySavings extends Command
 
         foreach ($goals as $goal) {
             $user = User::find($goal->user_id);
-            
+
             if ($user->balance >= $goal->monthly_saving) {
                 $user->balance -= $goal->monthly_saving;
                 $goal->current_amount += $goal->monthly_saving;
-                
+
                 $user->save();
                 $goal->save();
-                
+
                 $this->info("Processed savings for goal: {$goal->name}");
             } else {
                 $this->warn("Insufficient balance for goal: {$goal->name}");
