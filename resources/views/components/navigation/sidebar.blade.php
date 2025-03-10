@@ -25,14 +25,13 @@
                 <i class="fas fa-money-bill-wave w-6"></i>
                 <span>Dépenses</span>
             </a>
-            <a href="{{ route('notifications') }}" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl">
-                <i class="fas fa-bell w-6"></i>
-                <span>Notifications</span>
-                <span class="ml-auto bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">3</span>
-            </a>
             <a href="{{ route('goals') }}" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl">
                 <i class="fas fa-bullseye w-6"></i>
                 <span>Objectifs</span>
+            </a>
+            <a href="{{ route('alerts.index') }}" class="flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl">
+                <i class="fas fa-exclamation-triangle w-6"></i>
+                <span>Alerts</span>
             </a>
         </nav>
 

@@ -13,6 +13,7 @@ class Alert extends Model
         'user_id',
         'global_threshold',
         'category_threshold',
+        
     ];
 
     protected $casts = [

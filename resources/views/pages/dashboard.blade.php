@@ -14,66 +14,17 @@
 @push('scripts')
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Spending Trends Chart
-    const expensesCtx = document.getElementById('expensesChart').getContext('2d');
-    new Chart(expensesCtx, {
-        type: 'line',
-        data: {
-            labels: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
-            datasets: [{
-                label: 'Dépenses',
-                data: [500, 800, 450, 1000, 600, 750, 400],
-                borderColor: '#2563eb',
-                backgroundColor: '#2563eb10',
-                tension: 0.4,
-                fill: true
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    display: false
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    grid: {
-                        display: true,
-                        drawBorder: false,
-                        color: '#f1f5f9'
-                    },
-                    ticks: {
-                        callback: function(value) {
-                            return value + ' DH';
-                        }
-                    }
-                },
-                x: {
-                    grid: {
-                        display: false
-                    }
-                }
-            }
-        }
-    });
+    const data = @json($expensesAndGoals);
 
-    // Category Donut Chart
-    const categoryCtx = document.getElementById('categoryChart').getContext('2d');
-    new Chart(categoryCtx, {
+    // Configuration du graphique
+    const ctx = document.getElementById('expensesGoalsChart').getContext('2d');
+    new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Alimentation', 'Transport', 'Factures', 'Loisirs'],
+            labels: data.map(item => item.label),
             datasets: [{
-                data: [1250, 850, 1100, 600],
-                backgroundColor: [
-                    '#2563eb', // brand-primary
-                    '#16a34a', // brand-secondary
-                    '#8b5cf6', // purple-500
-                    '#f97316' // orange-500
-                ],
+                data: data.map(item => item.amount),
+                backgroundColor: data.map(item => item.color),
                 borderWidth: 0,
                 cutout: '75%'
             }]
@@ -91,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             const value = context.raw;
                             const total = context.dataset.data.reduce((a, b) => a + b, 0);
                             const percentage = ((value / total) * 100).toFixed(1);
-                            return `${context.label}: ${value} DH (${percentage}%)`;
+                            return `${context.label}: ${value.toLocaleString()} DH (${percentage}%)`;
                         }
                     }
                 }
@@ -99,6 +50,56 @@ document.addEventListener('DOMContentLoaded', function() {
             animation: {
                 animateScale: true,
                 animateRotate: true
+            }
+        }
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Données mensuelles
+    const monthlyData = @json($monthlyTrends);
+
+    // Configuration du graphique
+    const ctx = document.getElementById('expensesChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar', // Changé en graphique à barres
+        data: {
+            labels: monthlyData.map(item => item.month),
+            datasets: [{
+                label: 'Dépenses mensuelles',
+                data: monthlyData.map(item => item.total),
+                backgroundColor: '#2563eb',
+                borderRadius: 6,
+                barThickness: 20,
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.raw.toLocaleString() + ' DH';
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: '#f1f5f9'
+                    },
+                    ticks: {
+                        callback: value => value.toLocaleString() + ' DH'
+                    }
+                },
+                x: {
+                    grid: { display: false }
+                }
             }
         }
     });
@@ -119,3 +120,15 @@ document.getElementById('closeModalButton').addEventListener('click', function()
 @push('modals')
 @include('components.modals.update-salary');
 @endpush
+
+<style>
+    /* Couleurs pour les points de légende */
+    .chart-color-0 { background-color: #2563eb; }
+    .chart-color-1 { background-color: #16a34a; }
+    .chart-color-2 { background-color: #8b5cf6; }
+    .chart-color-3 { background-color: #f97316; }
+    .chart-color-4 { background-color: #ef4444; }
+    .chart-color-5 { background-color: #06b6d4; }
+    </style>
+
+

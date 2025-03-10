@@ -6,12 +6,22 @@ use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SalaryController;
 use App\Http\Controllers\GoalController;
+use App\Http\Controllers\AlertController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AIInsightController;
+use App\Http\Controllers\Admin\AdminController;
+
+use App\Http\Controllers\Admin\DashboardAdminController;
 
 
+
+
+
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\SettingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,7 +50,6 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 // Route::get('/transactions', [TransactionController::class, 'index'])->middleware(['auth'])->name('transactions');
-Route::get('/notifications', [NotificationController::class, 'index'])->middleware(['auth'])->name('notifications');
 Route::get('/goals', [GoalController::class, 'index'])->middleware(['auth'])->name('goals');
 
 Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
@@ -64,6 +73,53 @@ Route::delete('/goals/{id}', [GoalController::class, 'destroy'])->name('goals.de
 Route::post('/goals/{id}/progress', [GoalController::class, 'updateProgress'])->name('goals.progress');
 
 
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/alerts', [AlertController::class, 'index'])->name('alerts.index');
+    Route::post('/alerts', [AlertController::class, 'store'])->name('alerts.store');
+    Route::delete('/alerts/{alert}', [AlertController::class, 'destroy'])->name('alerts.destroy');
+});
+
+
+
+
+// Route::middleware(['auth'])->group(function () {
+//     // Route dashboard normal
+//     Route::get('/dashboard', function () {
+//         return view('pages.dashboard');
+//     })->name('dashboard');
+// });
+
+
+// // Routes Admin
+// Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
+//     Route::get('/', [DashboardAdminController::class, 'index'])->name('dashboard');
+//     Route::get('users', [UserController::class, 'index'])->name('users.index');
+//     Route::delete('users/inactive', [UserController::class, 'deleteInactive'])
+//         ->name('users.delete-inactive');
+
+//     // Gestion des catégories
+//     Route::resource('categories', CategoryController::class);
+// });
+
+
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
+    // Dashboard principal
+    Route::get('/', [DashboardAdminController::class, 'index'])->name('dashboard');
+
+    Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('admin.users.destroy');
+    // ✅ Corrected resource route
+    Route::resource('users', UserController::class)->names('users');
+
+    // Gestion des catégories
+    Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+    Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+    Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('categories.update');
+    Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+
+    // Route de déconnexion
+    Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+});
 
 
 require __DIR__.'/auth.php';

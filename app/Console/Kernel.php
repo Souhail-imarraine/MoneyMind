@@ -5,6 +5,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Jobs\CheckExpenseAlerts;
 
 class Kernel extends ConsoleKernel
 {
@@ -17,6 +18,8 @@ class Kernel extends ConsoleKernel
         $schedule->command('expenses:deduct')->daily();
         $schedule->command('expenses:calculate')->monthly();
         $schedule->command('savings:process-monthly')->everyMinute();
+        $schedule->command('alerts:check')->daily();
+        $schedule->job(new CheckExpenseAlerts)->daily();
     }
 
     /**

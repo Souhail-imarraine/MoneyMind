@@ -76,7 +76,7 @@
                         L'excellence financière à portée de main
                     </h1>
                     <p class="mt-6 text-xl text-gray-300">
-                        Découvrez une nouvelle ère de gestion financière avec MoneyMind. 
+                        Découvrez une nouvelle ère de gestion financière avec MoneyMind.
                         Intelligence artificielle et expertise financière réunies.
                     </p>
                     <div class="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
@@ -90,11 +90,21 @@
                     </div>
                 </div>
                 <div class="hidden lg:block relative">
-                    <img src="https://placehold.co/600x400" alt="Dashboard" class="rounded-2xl shadow-2xl">
+                    <svg class="w-full h-auto" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="600" height="400" rx="16" fill="#FFFFFF" />
+                        <path d="M100 300 L200 200 L300 250 L400 150 L500 200" stroke="#0A2463" stroke-width="4" fill="none"/>
+                        <circle cx="100" cy="300" r="6" fill="#0A2463"/>
+                        <circle cx="200" cy="200" r="6" fill="#0A2463"/>
+                        <circle cx="300" cy="250" r="6" fill="#0A2463"/>
+                        <circle cx="400" cy="150" r="6" fill="#0A2463"/>
+                        <circle cx="500" cy="200" r="6" fill="#0A2463"/>
+                    </svg>
                     <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
                         <div class="flex items-center space-x-4">
                             <div class="bg-green-100 p-3 rounded-full">
-                                <i class="fas fa-chart-line text-green-500"></i>
+                                <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                                </svg>
                             </div>
                             <div>
                                 <p class="text-sm text-gray-600">Croissance mensuelle</p>
@@ -112,11 +122,21 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p class="text-center text-gray-600 mb-8">Ils nous font confiance</p>
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-items-center">
-                <img src="https://placehold.co/120x40" alt="Logo 1" class="h-8 opacity-50 hover:opacity-100 transition-opacity">
-                <img src="https://placehold.co/120x40" alt="Logo 2" class="h-8 opacity-50 hover:opacity-100 transition-opacity">
-                <img src="https://placehold.co/120x40" alt="Logo 3" class="h-8 opacity-50 hover:opacity-100 transition-opacity">
-                <img src="https://placehold.co/120x40" alt="Logo 4" class="h-8 opacity-50 hover:opacity-100 transition-opacity">
-                <img src="https://placehold.co/120x40" alt="Logo 5" class="h-8 opacity-50 hover:opacity-100 transition-opacity">
+                <svg class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity" viewBox="0 0 120 40" fill="#0A2463">
+                    <rect x="10" y="10" width="100" height="20" rx="4"/>
+                </svg>
+                <svg class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity" viewBox="0 0 120 40" fill="#0A2463">
+                    <circle cx="60" cy="20" r="15"/>
+                </svg>
+                <svg class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity" viewBox="0 0 120 40" fill="#0A2463">
+                    <polygon points="60,10 80,30 40,30"/>
+                </svg>
+                <svg class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity" viewBox="0 0 120 40" fill="#0A2463">
+                    <path d="M20,20 Q60,5 100,20"/>
+                </svg>
+                <svg class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity" viewBox="0 0 120 40" fill="#0A2463">
+                    <rect x="20" y="10" width="80" height="20" rx="10"/>
+                </svg>
             </div>
         </div>
     </section>
@@ -132,7 +152,10 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300">
                     <div class="w-14 h-14 bg-[#0A2463]/10 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-pie text-2xl text-[#0A2463]"></i>
+                        <svg class="w-8 h-8 text-[#0A2463]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
+                        </svg>
                     </div>
                     <h3 class="text-xl font-bold text-[#0A2463] mb-4">Analyse intelligente</h3>
                     <p class="text-gray-600">Visualisez vos données financières avec des graphiques interactifs et des rapports détaillés.</p>
@@ -140,7 +163,9 @@
 
                 <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300">
                     <div class="w-14 h-14 bg-[#0A2463]/10 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-robot text-2xl text-[#0A2463]"></i>
+                        <svg class="w-8 h-8 text-[#0A2463]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
                     </div>
                     <h3 class="text-xl font-bold text-[#0A2463] mb-4">IA prédictive</h3>
                     <p class="text-gray-600">Anticipez les tendances et optimisez vos décisions financières grâce à notre IA.</p>
@@ -148,7 +173,9 @@
 
                 <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300">
                     <div class="w-14 h-14 bg-[#0A2463]/10 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-shield-alt text-2xl text-[#0A2463]"></i>
+                        <svg class="w-8 h-8 text-[#0A2463]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
                     </div>
                     <h3 class="text-xl font-bold text-[#0A2463] mb-4">Sécurité maximale</h3>
                     <p class="text-gray-600">Vos données sont protégées par les meilleurs systèmes de sécurité.</p>
@@ -178,7 +205,10 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                 <div>
                     <div class="flex items-center mb-6">
-                        <img src="https://placehold.co/45x45" alt="Logo" class="h-10">
+                        <svg class="h-10 w-10" viewBox="0 0 45 45" fill="#0A2463">
+                            <circle cx="22.5" cy="22.5" r="20"/>
+                            <path d="M15 22.5 L22.5 15 L30 22.5 L22.5 30 Z" fill="white"/>
+                        </svg>
                         <span class="ml-3 text-xl font-bold text-[#0A2463]">MoneyMind</span>
                     </div>
                     <p class="text-gray-600">Votre partenaire de confiance pour une meilleure gestion financière.</p>
@@ -202,9 +232,23 @@
                 <div>
                     <h3 class="text-[#0A2463] font-semibold mb-4">Suivez-nous</h3>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-600 hover:text-[#0A2463]"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-600 hover:text-[#0A2463]"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-gray-600 hover:text-[#0A2463]"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-[#0A2463]">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-[#0A2463]">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-[#0A2463]">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>

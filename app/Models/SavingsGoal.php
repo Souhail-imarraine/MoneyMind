@@ -11,11 +11,13 @@ class SavingsGoal extends Model
         'name',
         'goal_amount',
         'monthly_saving',
+        'current_amount',
+        'is_achieved',
     ];
 
-    // protected $casts = [
-    //     'target_date' => 'date',
-    // ];
+    protected $casts = [
+        'is_achieved' => 'boolean'
+    ];
 
     // Relations
     public function user()
