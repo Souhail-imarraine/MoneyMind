@@ -22,13 +22,12 @@ class AddMonthlySalary extends Command
                 $this->error("User ID {$user->id} has no salary_day set.");
                 continue;
             }
-            
-            // Convert user's salary_day to a day format
+
             $dayUser = Carbon::createFromFormat('d', $user->salary_day)->format('d');
 
             if ($dayNow == $dayUser) {
-                $user->balance += $user->salary; // Increase balance
-                $user->save(); // Save changes
+                $user->balance += $user->salary;
+                $user->save();
                 $this->info("Salary added for user ID {$user->id}");
             }
         }

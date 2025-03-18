@@ -13,7 +13,7 @@ class AdminMiddleware
             return redirect()->route('dashboard')
                 ->with('error', 'Accès non autorisé.');
         }
-
+        
         return $next($request);
     }
 }
