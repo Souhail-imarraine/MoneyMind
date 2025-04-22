@@ -238,6 +238,7 @@ document.getElementById('newGoalModal').addEventListener('click', function(e) {
     }
 });
 
+
 function updateGoalProgress(id, value, total) {
     const percentage = Math.round((value / total) * 100);
     document.getElementById(`percentage_${id}`).textContent = `${percentage}%`;
