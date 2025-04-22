@@ -9,12 +9,12 @@ return new class extends Migration
     public function up()
     {
         Schema::table('savings_goals', function (Blueprint $table) {
-            // D'abord supprimer la colonne existante
-            $table->dropColumn('is_achieved');
+            if (Schema::hasColumn('savings_goals', 'is_achieved')) {
+                $table->dropColumn('is_achieved');
+            }
         });
 
         Schema::table('savings_goals', function (Blueprint $table) {
-            // Ensuite recréer la colonne avec le bon type
             $table->boolean('is_achieved')->default(false);
         });
     }
@@ -22,7 +22,9 @@ return new class extends Migration
     public function down()
     {
         Schema::table('savings_goals', function (Blueprint $table) {
-            $table->dropColumn('is_achieved');
+            if (Schema::hasColumn('savings_goals', 'is_achieved')) {
+                $table->dropColumn('is_achieved');
+            }
         });
     }
 };
