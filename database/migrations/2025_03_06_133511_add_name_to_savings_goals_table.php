@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('savings_goals', function (Blueprint $table) {
+            $table->string('name')->after('user_id');
         });
     }
 
@@ -21,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('savings_goals', function (Blueprint $table) {
-        
+            $table->dropColumn('name');
         });
     }
 };

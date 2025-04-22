@@ -77,7 +77,7 @@
                         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                             Catégorie
                         </label>
-                        <select name="category"
+                        <select name="category_id"
                                 required
                                 class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-money-primary/20 dark:focus:ring-money-secondary/20">
                             <option value="">Sélectionner une catégorie</option>
@@ -192,4 +192,4 @@
         fileInput.files = files;
     }
 </script>
-@endpush 
+@endpush

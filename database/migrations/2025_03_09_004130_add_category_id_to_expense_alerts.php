@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::table('expense_alerts', function (Blueprint $table) {
             $table->foreignId('category_id')->nullable()->constrained('categories');
-            $table->string('alert_type')->default('total'); // 'total' ou 'category'
+            $table->string('alert_type')->default('total'); 
         });
     }
 

@@ -23,7 +23,6 @@ return new class extends Migration
     {
         Schema::table('savings_goals', function (Blueprint $table) {
             $table->dropColumn('is_achieved');
-            $table->tinyInteger('is_achieved')->default(0);
         });
     }
 };

@@ -27,20 +27,27 @@ class GoalController extends Controller
             'name' => 'required|string|max:255',
             'goal_amount' => 'required|numeric|min:0',
             'monthly_saving' => 'required|numeric|min:0',
+            'target_date' => 'required|date|after:today',
         ]);
 
-        // dd($validated);
+        try {
+            $goal = new SavingsGoal();
+            $goal->name = $validated['name'];
+            $goal->goal_amount = $validated['goal_amount'];
+            $goal->monthly_saving = $validated['monthly_saving'];
+            $goal->target_date = $validated['target_date'];
+            $goal->user_id = auth()->id();
+            $goal->current_amount = 0;
+            $goal->is_achieved = false;
 
-        $goal = new SavingsGoal();
+            $goal->save();
 
-        $goal->name = $validated['name'];
-        $goal->goal_amount = $validated['goal_amount'];
-        $goal->monthly_saving = $validated['monthly_saving'];
-        $goal->user_id = auth()->id();
-        $goal->current_amount = 0;
-        $goal->save();
-
-        return redirect()->back()->with('success', 'Objectif créé avec succès!');
+            return redirect()->back()->with('success', 'Objectif créé avec succès!');
+        } catch (\Exception $e) {
+            return redirect()->back()
+                ->withInput()
+                ->withErrors(['error' => 'Une erreur est survenue lors de la création de l\'objectif.']);
+        }
     }
 
 

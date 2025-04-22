@@ -189,6 +189,12 @@
                             class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-primary/20"
                             placeholder="Ex: 500" min="0" step="100">
                     </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Date cible</label>
+                        <input type="date" name="target_date" required
+                            class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-primary/20"
+                            min="{{ date('Y-m-d') }}">
+                    </div>
                 </div>
                 <div class="mt-6 flex items-center justify-end space-x-3">
                     <button type="button" onclick="closeNewGoalModal()"
