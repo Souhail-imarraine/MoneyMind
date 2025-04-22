@@ -21,7 +21,7 @@
         .nav-link {
             position: relative;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -32,16 +32,16 @@
             background-color: #0A2463;
             transition: width 0.3s ease;
         }
-        
+
         .nav-link:hover::after {
             width: 100%;
         }
-        
+
         /* Add smooth scale animation to buttons */
         .btn-animate {
             transition: transform 0.3s ease;
         }
-        
+
         .btn-animate:hover {
             transform: scale(1.05);
         }
@@ -126,7 +126,7 @@
                         L'excellence financière à portée de main
                     </h1>
                     <p class="mt-6 text-xl text-gray-300">
-                        Découvrez une nouvelle ère de gestion financière avec MoneyMind. 
+                        Découvrez une nouvelle ère de gestion financière avec MoneyMind.
                         Intelligence artificielle et expertise financière réunies.
                     </p>
                     <div class="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
@@ -140,7 +140,7 @@
                     </div>
                 </div>
                 <div class="hidden lg:block relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                    <img src="https://placehold.co/600x400" alt="Dashboard" class="rounded-2xl shadow-2xl">
+                    <img src="{{ asset('images/finance.jpg') }}" alt="Dashboard" class="rounded-2xl shadow-2xl">
                     <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
                         <div class="flex items-center space-x-4">
                             <div class="bg-green-100 p-3 rounded-full">
@@ -162,11 +162,30 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p class="text-center text-gray-600 mb-8" data-aos="fade-up">Ils nous font confiance</p>
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-items-center">
-                <img src="https://placehold.co/120x40" alt="Logo 1" class="h-8 opacity-50 hover:opacity-100 transition-opacity" data-aos="fade-up" data-aos-delay="100">
-                <img src="https://placehold.co/120x40" alt="Logo 2" class="h-8 opacity-50 hover:opacity-100 transition-opacity" data-aos="fade-up" data-aos-delay="200">
-                <img src="https://placehold.co/120x40" alt="Logo 3" class="h-8 opacity-50 hover:opacity-100 transition-opacity" data-aos="fade-up" data-aos-delay="300">
-                <img src="https://placehold.co/120x40" alt="Logo 4" class="h-8 opacity-50 hover:opacity-100 transition-opacity" data-aos="fade-up" data-aos-delay="400">
-                <img src="https://placehold.co/120x40" alt="Logo 5" class="h-8 opacity-50 hover:opacity-100 transition-opacity" data-aos="fade-up" data-aos-delay="500">
+                <!-- Chart Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-gray-600 hover:text-gray-900 transition-colors" data-aos="fade-up" data-aos-delay="100">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+                </svg>
+
+                <!-- Wallet Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-gray-600 hover:text-gray-900 transition-colors" data-aos="fade-up" data-aos-delay="200">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" />
+                </svg>
+
+                <!-- Calculator Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-gray-600 hover:text-gray-900 transition-colors" data-aos="fade-up" data-aos-delay="300">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25V13.5Zm0 2.25h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25V18Zm2.498-6.75h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007V13.5Zm0 2.25h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007V18Zm2.504-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V13.5Zm0 2.25h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V18Zm2.498-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V13.5ZM8.25 6h7.5v2.25h-7.5V6ZM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 0 0 2.25 2.25h10.5a2.25 2.25 0 0 0 2.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0 0 12 2.25Z" />
+                </svg>
+
+                <!-- Bank Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-gray-600 hover:text-gray-900 transition-colors" data-aos="fade-up" data-aos-delay="400">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
+                </svg>
+
+                <!-- Currency Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-gray-600 hover:text-gray-900 transition-colors" data-aos="fade-up" data-aos-delay="500">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
             </div>
         </div>
     </section>
@@ -180,8 +199,8 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300" 
-                     data-aos="fade-up" 
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300"
+                     data-aos="fade-up"
                      data-aos-delay="100"
                      data-aos-duration="1000">
                     <div class="w-14 h-14 bg-[#0A2463]/10 rounded-xl flex items-center justify-center mb-6">
@@ -237,7 +256,6 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                 <div>
                     <div class="flex items-center mb-6">
-                        <img src="https://placehold.co/45x45" alt="Logo" class="h-10">
                         <span class="ml-3 text-xl font-bold text-[#0A2463]">MoneyMind</span>
                     </div>
                     <p class="text-gray-600">Votre partenaire de confiance pour une meilleure gestion financière.</p>
@@ -358,14 +376,14 @@
         const { animate, stagger, inView } = Motion;
 
         // Animate navigation items
-        animate('.nav-item', 
+        animate('.nav-item',
             { opacity: [0, 1], y: [20, 0] },
             { duration: 0.5, delay: stagger(0.1) }
         );
 
         // Animate elements when they come into view
         inView('.feature-card', ({ target }) => {
-            animate(target, 
+            animate(target,
                 { opacity: [0, 1], scale: [0.8, 1] },
                 { duration: 0.6, easing: 'ease-out' }
             );
